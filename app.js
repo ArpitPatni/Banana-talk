@@ -6,16 +6,16 @@ var outputDiv=document.querySelector("#output");
 var serverURL="https://api.funtranslations.com/translate/minion.json";
 
 
-function getTranslationURL(text){
-    return serverURL + "?" +"text=" +text;
+function getTranslationURL(input){
+    return serverURL + "?" +"text=" + input;
 }
 
 function errorHandler(error){
     console.log("error occured",error);
-    alert("Something went wrong with server. Try again after sometime !!");
+    alert("Something went wrong with server. Try again after sometime !!")
 }
 
-function clickEventHandler() {
+function clickHandler() {
     var inputText=txtInput.value; //here i am taking input
 
     //calling server for processing
@@ -28,4 +28,4 @@ function clickEventHandler() {
     .catch(errorHandler)
 }
 
-btnTranslate.addEventListener("click", clickEventHandler)
+btnTranslate.addEventListener("click", clickHandler)
